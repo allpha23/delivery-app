@@ -6,14 +6,14 @@ const PostCategory = (sequelize, DataTypes) => {
   );
 
   SalesProduct.associate = (models) => {
-    models.Sales.belongsToMany(models.Product, {
+    models.sale.belongsToMany(models.product, {
       as: "products",
       through: SalesProduct,
       foreignKey: "sale_id",
       otherKey: "product_id",
     });
 
-    models.Product.belongsToMany(models.Sales, {
+    models.product.belongsToMany(models.sale, {
       as: "sales",
       through: SalesProduct,
       foreignKey: "product_id",
