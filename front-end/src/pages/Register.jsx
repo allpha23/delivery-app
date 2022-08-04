@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 function Register() {
-  const history = useHistory();
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,16 +18,19 @@ function Register() {
         type="text"
         data-testid="common_register__input-name"
         placeholder="Seu Nome"
+        onChange={ (e) => setName(e.target.value) }
       />
       <input
         type="text"
         data-testid="common_register__input-email"
         placeholder="seu-email@site.com.br"
+        onChange={ (e) => setEmail(e.target.value) }
       />
       <input
         type="password"
         data-testid="common_register__input-password"
         placeholder="********"
+        onChange={ (e) => setPassword(e.target.value) }
       />
       <button
         type="button"
