@@ -17,7 +17,7 @@ function Login() {
     <section>
       <p> Email </p>
       <input
-        data-testid="common_login__input - email"
+        data-testid="common_login__input-email"
         type="text"
         value={ email }
         onChange={ (e) => setEmail(e.target.value) }
