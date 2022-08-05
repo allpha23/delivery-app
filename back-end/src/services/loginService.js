@@ -1,6 +1,6 @@
 const { user } = require('../database/models');
 
-const getAll = async (email, password) => {
+const login = async (email, password) => {
   const users = await user.findAll({ where: {
     email,
     password,
@@ -9,4 +9,4 @@ const getAll = async (email, password) => {
   return users; 
 };
 
-module.exports = { getAll };
+module.exports = { login };
