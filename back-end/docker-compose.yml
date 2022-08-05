@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  db:
+    container_name: delivery_app_db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: senhaDoDB
+    ports:
+      - 3306:3306
