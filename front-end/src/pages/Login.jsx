@@ -16,19 +16,19 @@ function Login() {
   const tryLogin = async () => {
     try {
       const logging = await login(email, password);
-      localStorage.setItem('token', JSON.stringify(logging.data))
+      localStorage.setItem('token', JSON.stringify(logging.data));
       console.log(logging.data);
       setRedir(true);
     } catch (e) {
       setErrorMessage(true);
       console.log(e.message);
     }
-  } 
+  };
   const btnStatus = !((password.length >= minPasswordLength) && emailRegex.test(email));
 
   return (
     <section>
-      <label for="email"> Email </label>
+      <p> Email </p>
       <input
         id="email"
         name="email"
@@ -37,7 +37,7 @@ function Login() {
         value={ email }
         onChange={ (e) => setEmail(e.target.value) }
       />
-      <label for="password"> Password </label>
+      <p> Password </p>
       <input
         id="password"
         name="password"
