@@ -2,11 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const errorMiddleware = require('../middlewares/error');
 const loginRoute = require('../routes/loginRoute');
+const userRoute = require('../routes/userRoute');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use('/login', loginRoute);
+app.use('/user', userRoute);
 
 app.use(errorMiddleware);
 
