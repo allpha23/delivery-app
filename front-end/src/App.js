@@ -16,6 +16,8 @@ function App() {
         <Route exact path="/register">
           <Register />
         </Route>
+        <Route exact path="/customer/products">
+        </Route>
       </Switch>
     </BrowserRouter>
   );
