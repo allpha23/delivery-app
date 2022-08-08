@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import login from '../services/Login';
 
 function Login() {
   const history = useHistory();
@@ -33,6 +34,7 @@ function Login() {
         data-testid="common_login__button-login"
         type="button"
         disabled={ btnStatus }
+        onClick={ async () => console.log(await login(email, password)) }
       >
         LOGIN
       </button>
