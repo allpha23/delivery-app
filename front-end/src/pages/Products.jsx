@@ -22,7 +22,7 @@ export default function Products() {
       { productData?.map((el, index) => (
         <ProductCard
           key={ index }
-          title={ el.title }
+          title={ el.name }
           price={ el.price }
           image={ el.urlImage }
           testId={ `customer_products__element-card-price-${index + 1}` }

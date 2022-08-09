@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import login from '../services/Login';
+import getProducts from '../services/Products';
 
 function Login() {
   const history = useHistory();
@@ -15,9 +16,10 @@ function Login() {
 
   const tryLogin = async () => {
     try {
+      const a = await getProducts();
       const logging = await login(email, password);
       localStorage.setItem('token', JSON.stringify(logging.data));
-      console.log(logging.data);
+      console.log(a.data[0].urlImage);
       setRedir(true);
     } catch (e) {
       setErrorMessage(true);
