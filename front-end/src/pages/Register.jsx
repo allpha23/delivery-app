@@ -16,7 +16,7 @@ function Register() {
   const tryRegister = async () => {
     try {
       const req = await register(name, email, password, 'customer');
-      console.log(req);
+      console.log(req.data);
       setRedir(true);
     } catch (error) {
       console.log(error.message);
