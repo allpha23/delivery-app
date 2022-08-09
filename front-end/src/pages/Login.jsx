@@ -24,6 +24,7 @@ function Login() {
       console.log(e.message);
     }
   };
+
   const btnStatus = !((password.length >= minPasswordLength) && emailRegex.test(email));
 
   return (
