@@ -16,7 +16,7 @@ const login = async (email, password) => {
 
   const token = jwt(users);
   
-  return token;
+  return { name: users.name, token };
 };
 
 module.exports = { login };
