@@ -9,7 +9,7 @@ export default function Products() {
   return (
     <>
       <ClientNavegation />
-      {productData?.map((el, index) => (
+      { productData?.map((el, index) => (
         <ProductCard
           key={ index }
           title={ el.title }

@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import propTypes from 'prop-types';
 import Context from './Context';
 
