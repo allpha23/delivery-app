@@ -11,6 +11,7 @@ export default function ClientNavegation() {
       <button
         type="button"
         onClick={ () => history.push('/customer/products') }
+        data-testid="customer_products__element-navbar-link-products"
       >
         PRODUTOS
       </button>
@@ -18,12 +19,23 @@ export default function ClientNavegation() {
       <button
         type="button"
         onClick={ () => history.push('/customer/orders') }
+        data-testid="customer_products__element-navbar-link-orders"
       >
         MEUS PEDIDOS
       </button>
 
-      <h1>{ userInfo.name }</h1>
-      <button type="button"> LOGOUT</button>
+      <h1
+        data-testid="customer_products__element-navbar-user-full-name"
+      >
+        { userInfo.name }
+      </h1>
+      <button
+        type="button"
+        data-testid="customer_products__element-navbar-link-logout"
+      >
+        {' '}
+        LOGOUT
+      </button>
     </nav>
   );
 }
