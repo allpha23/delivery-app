@@ -8,14 +8,14 @@ const create = async (data) => {
   const find2 = await user.findOne({ where: { name: data.name } });
   if (find || find2) throw new AppError('user already registered', 409);
   const password = md5(data.password);
-  const result = await user.create({ ...data, password });
-  const login = await loginService.login(data.email, data.password);
+  const { name, email, role } = await user.create({ ...data, password });
+  const { token } = await loginService.login(data.email, data.password);
 
   return { 
-    name: result.name,
-    email: result.email,
-    role: result.role,
-    token: login.token,
+    name,
+    email,
+    role,
+    token,
   };
 };
 
