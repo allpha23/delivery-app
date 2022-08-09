@@ -9,7 +9,7 @@ export default function Products() {
 
   const fetchProducts = async () => {
     const response = await getProducts();
-    setProductData(response);
+    setProductData(response.data);
   };
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Products() {
           key={ index }
           title={ el.title }
           price={ el.price }
-          image={ el.image }
+          image={ el.urlImage }
           testId={ `customer_products__element-card-price-${index + 1}` }
         />))}
     </>
