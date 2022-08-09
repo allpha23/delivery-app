@@ -13,7 +13,7 @@ function Login() {
 
   const minPasswordLength = 6;
   const emailRegex = /\S+@\S+\.\S+/;
-  
+
   const tryLogin = async () => {
     try {
       const logging = await login(email, password);

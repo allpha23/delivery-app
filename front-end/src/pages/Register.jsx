@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import local from '../helpers/setLocalStorage';
 import register from '../services/Register';
 
 function Register() {
@@ -15,8 +16,9 @@ function Register() {
 
   const tryRegister = async () => {
     try {
-      const req = await register(name, email, password, 'customer');
-      console.log(req.data);
+      const info = await register(name, email, password, 'customer');
+      local(info.data);
+      console.log(info.data);
       setRedir(true);
     } catch (error) {
       console.log(error.message);
