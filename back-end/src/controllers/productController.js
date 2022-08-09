@@ -19,4 +19,14 @@ const getAll = async (_req, res, next) => {
   }
 };
 
-module.exports = { create, getAll };
+const getById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const result = await productService.getById(+id);
+    return res.status(200).json(result);
+  } catch (e) {
+    next(e);
+  }
+};
+
+module.exports = { create, getAll, getById };
