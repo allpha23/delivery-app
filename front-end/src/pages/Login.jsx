@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
+import local from '../helpers/setLocalStorage';
 import login from '../services/Login';
 
 function Login() {
@@ -12,11 +13,11 @@ function Login() {
 
   const minPasswordLength = 6;
   const emailRegex = /\S+@\S+\.\S+/;
-
+  
   const tryLogin = async () => {
     try {
       const logging = await login(email, password);
-      localStorage.setItem('token', JSON.stringify(logging.data));
+      local(logging.data);
       console.log(logging.data);
       setRedir(true);
     } catch (e) {
