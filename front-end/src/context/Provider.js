@@ -16,9 +16,16 @@ export default function Provider({ children }) {
   const [productData, setProductData] = useState(mockObject);
   const [userInfo, setUserInfo] = useState({ name: '', email: '', role: '', token: '' });
 
+  const stateGlobal = useMemo(() => ({
+    userInfo,
+    setUserInfo,
+    productData,
+    setProductData,
+  }), [productData, userInfo]);
+
   return (
     <Context.Provider
-      value={ { userInfo, setUserInfo, productData, setProductData } }
+      value={ stateGlobal }
     >
       { children }
     </Context.Provider>

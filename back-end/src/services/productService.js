@@ -7,7 +7,7 @@ const create = async (data) => {
   const result = await product.create(data);
   return result;
 };
-//alguma coisa
+
 const getAll = async () => {
   const result = await product.findAll();
   return result;
