@@ -3,8 +3,9 @@ import { PropTypes } from 'prop-types';
 
 export default function ProductCard({ testId, title, price, image }) {
   const [quantity, setQuantity] = useState(0);
+  console.log(quantity);
   return (
-    <div data-testId={ testId }>
+    <div data-testid={ testId }>
       <h1>{title}</h1>
       <h1>{price}</h1>
       <img src={ image } alt={ title } />
@@ -17,7 +18,11 @@ export default function ProductCard({ testId, title, price, image }) {
       >
         -
       </button>
-      <input type="number" value={ quantity } />
+      <input
+        type="number"
+        value={ quantity }
+        onChange={ (event) => setQuantity(Number(event.target.value)) }
+      />
       <button type="button" onClick={ () => setQuantity(quantity + 1) }> + </button>
     </div>
   );
