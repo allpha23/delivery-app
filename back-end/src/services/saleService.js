@@ -1,5 +1,6 @@
 const { sale } = require('../database/models');
 const { salesProduct } = require('../database/models');
+const { user } = require('../database/models');
 
 const create = async (data) => {
   const { userId, totalPrice, deliveryAddress, deliveryNumber, saleDate, status, sellerId } = data;
@@ -19,6 +20,7 @@ const create = async (data) => {
 const getById = async (id) => {
   const result = await sale.findAll({
     where: { userId: id },
+    include: [{ model: user, as: 'Seller', attributes: { exclude: ['password'] } }],
   });
   return result;
 };
