@@ -7,7 +7,11 @@ const create = async (data) => {
     { userId, totalPrice, deliveryAddress, deliveryNumber, saleDate, status, sellerId },
   );
 
-  await salesProduct.create({ saleId: result.id, productId: 1, quantity: 1 });
+  await salesProduct.create({
+    saleId: result.id,
+    productId: data.productId,
+    quantity: data.quantity,
+  });
 
   return result;
 };
