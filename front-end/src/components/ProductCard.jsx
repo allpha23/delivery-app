@@ -5,12 +5,17 @@ export default function ProductCard({ testId, title, price, image }) {
   const [quantity, setQuantity] = useState(0);
   console.log(quantity);
   return (
-    <div data-testid={ testId }>
-      <h1>{title}</h1>
-      <h1>{price}</h1>
-      <img src={ image } alt={ title } />
+    <div>
+      <h1 data-testid={ `customer_products__element-card-title-${testId}` }>{title}</h1>
+      <h1 data-testid={ `customer_products__element-card-price-${testId}` }>{price}</h1>
+      <img
+        src={ image }
+        alt={ title }
+        data-testid={ `customer_products__img-card-bg-image-${testId}` }
+      />
 
       <button
+        data-testid={ `customer_products__button-card-rm-item-${testId}` }
         type="button"
         onClick={ () => {
           if (quantity > 0) setQuantity(quantity - 1);
@@ -19,11 +24,18 @@ export default function ProductCard({ testId, title, price, image }) {
         -
       </button>
       <input
+        data-testid={ `customer_products__input-card-quantity-${testId}` }
         type="number"
         value={ quantity }
         onChange={ (event) => setQuantity(Number(event.target.value)) }
       />
-      <button type="button" onClick={ () => setQuantity(quantity + 1) }> + </button>
+      <button
+        data-testId={ `customer_products__button-card-add-item-${testId}` }
+        type="button"
+        onClick={ () => setQuantity(quantity + 1) }
+      >
+        +
+      </button>
     </div>
   );
 }

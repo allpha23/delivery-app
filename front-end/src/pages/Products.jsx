@@ -25,7 +25,7 @@ export default function Products() {
           title={ el.name }
           price={ el.price }
           image={ el.urlImage }
-          testId={ `customer_products__element-card-price-${index + 1}` }
+          testId={ index + 1 }
         />))}
     </>
   );
