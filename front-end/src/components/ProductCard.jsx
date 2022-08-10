@@ -3,11 +3,11 @@ import { PropTypes } from 'prop-types';
 
 export default function ProductCard({ testId, title, price, image }) {
   const [quantity, setQuantity] = useState(0);
-  console.log(quantity);
+
   return (
     <div>
       <h1 data-testid={ `customer_products__element-card-title-${testId}` }>{title}</h1>
-      <h1 data-testid={ `customer_products__element-card-price-${testId}` }>{price}</h1>
+      <h1 data-testid={ `customer_products__element-card-price-${testId}` }>{price.replace('.', ',')}</h1>
       <img
         src={ image }
         alt={ title }
@@ -30,7 +30,7 @@ export default function ProductCard({ testId, title, price, image }) {
         onChange={ (event) => setQuantity(Number(event.target.value)) }
       />
       <button
-        data-testId={ `customer_products__button-card-add-item-${testId}` }
+        data-testid={ `customer_products__button-card-add-item-${testId}` }
         type="button"
         onClick={ () => setQuantity(quantity + 1) }
       >
@@ -41,8 +41,8 @@ export default function ProductCard({ testId, title, price, image }) {
 }
 
 ProductCard.propTypes = {
-  testId: PropTypes.string.isRequired,
+  testId: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 };
