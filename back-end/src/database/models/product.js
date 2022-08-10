@@ -11,9 +11,13 @@ module.exports = (sequelize, DataTypes) => {
       },
       name: DataTypes.STRING,
       price: DataTypes.DECIMAL(4,2),
-      url_image: DataTypes.STRING,
+      urlImage: {
+        field: 'url_image',
+        type: DataTypes.STRING,
+      }
     },
-    {
+    { 
+      underscored: true, 
       timestamps: false,
     }
   );

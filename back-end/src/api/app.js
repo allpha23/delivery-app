@@ -11,6 +11,7 @@ app.use(cors());
 app.use('/login', loginRoute);
 app.use('/user', userRoute);
 app.use('/product', productRoute);
+app.use(express.static('public'));
 
 app.use(errorMiddleware);
 
