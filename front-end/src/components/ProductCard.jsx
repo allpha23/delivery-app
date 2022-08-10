@@ -7,7 +7,9 @@ export default function ProductCard({ testId, title, price, image }) {
   return (
     <div>
       <h1 data-testid={ `customer_products__element-card-title-${testId}` }>{title}</h1>
-      <h1 data-testid={ `customer_products__element-card-price-${testId}` }>{price.replace('.', ',')}</h1>
+      <h1 data-testid={ `customer_products__element-card-price-${testId}` }>
+        {price.replace('.', ',')}
+      </h1>
       <img
         src={ image }
         alt={ title }
