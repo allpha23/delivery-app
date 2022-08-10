@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 
 export default function ProductCard({ testId, title, price, image }) {
   const [quantity, setQuantity] = useState(0);
+
+  const correctPrice = (quantity * parseFloat(price)).toFixed(2);
+
+  useEffect(() => {
+    console.log(quantity);
+  }, [quantity]);
 
   return (
     <div>
@@ -38,6 +44,7 @@ export default function ProductCard({ testId, title, price, image }) {
       >
         +
       </button>
+      <p>{ `Valor total do produto R$${correctPrice}` }</p>
     </div>
   );
 }

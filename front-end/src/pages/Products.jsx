@@ -27,6 +27,15 @@ export default function Products() {
           image={ el.urlImage }
           testId={ index + 1 }
         />))}
+
+      <button
+        type="button"
+        data-testid="customer_products__checkout-bottom-value"
+      >
+        Ver carrinho -
+        {' '}
+        { }
+      </button>
     </>
   );
 }
