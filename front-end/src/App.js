@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Login, Register, Products } from './pages';
 import Provider from './context/Provider';
 import Checkout from './pages/Checkout';
+import Orders from './pages/Orders';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/customer/checkout">
             <Checkout />
+          </Route>
+          <Route exact path="/customer/orders">
+            <Orders />
           </Route>
         </Switch>
       </BrowserRouter>
