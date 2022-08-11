@@ -6,8 +6,11 @@ import Context from '../context/Context';
 import getProducts from '../services/Products';
 
 export default function Products() {
-  const { productData, setProductData } = useContext(Context);
+  const { productData, setProductData, cart } = useContext(Context);
   const [redir, setRedir] = useState(false);
+
+  const priceCheck = cart
+  .reduce((price, item) => (Number(item.price) * item.quantity) + price, 0).toFixed(2).replace('.', ',');
 
   const fetchProducts = async () => {
     const response = await getProducts();
@@ -34,10 +37,9 @@ export default function Products() {
         type="button"
         data-testid="customer_products__checkout-bottom-value"
         onClick={ () => setRedir(true) }
+        disabled={ cart.length === 0 }
       >
-        Ver carrinho -
-        {' '}
-        { }
+        { priceCheck }
       </button>
       {redir && <Redirect to="/customer/checkout" />}
     </>

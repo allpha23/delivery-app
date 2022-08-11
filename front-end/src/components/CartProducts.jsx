@@ -3,7 +3,9 @@ import Context from '../context/Context';
 
 function CartProducts() {
   const { cart, setCart } = useContext(Context);
-  const { cartTotal } = useContext(Context);
+
+  const priceCheck = cart
+  .reduce((price, item) => (Number(item.price) * item.quantity) + price, 0).toFixed(2).replace('.', ',');
 
   return (
     <>
@@ -20,28 +22,28 @@ function CartProducts() {
           <tr key={ i + 1 }>
             <td
               data-testid={
-                `customer_checkout__element-order-table-item-number-${i + 1}`
+                `customer_checkout__element-order-table-item-number-${i}`
               }
             >
               { i + 1 }
             </td>
             <td
-              data-testid={ `customer_checkout__element-order-table-name-${i + 1}` }
+              data-testid={ `customer_checkout__element-order-table-name-${i}` }
             >
               { product.name }
             </td>
             <td
-              data-testid={ `customer_checkout__element-order-table-quantity-${i + 1}` }
+              data-testid={ `customer_checkout__element-order-table-quantity-${i}` }
             >
               { product.quantity }
             </td>
             <td
-              data-testid={ `customer_checkout__element-order-table-unit-price-${i + 1}` }
+              data-testid={ `customer_checkout__element-order-table-unit-price-${i}` }
             >
-              { product.price }
+              { `R$${product.price.replace('.', ',')}` }
             </td>
             <td
-              data-testid={ `customer_checkout__element-order-table-sub-total-${i + 1}` }
+              data-testid={ `customer_checkout__element-order-table-sub-total-${i}` }
             >
               { (product.quantity * parseFloat(product.price))
                 .toFixed(2)
@@ -49,7 +51,7 @@ function CartProducts() {
             </td>
             <td>
               <button
-                data-testid={ `customer_checkout__element-order-table-remove-${i + 1}` }
+                data-testid={ `customer_checkout__element-order-table-remove-${i}` }
                 type="button"
                 onClick={ () => {
                   const removed = cart.filter((p) => p.name !== product.name);
@@ -63,7 +65,7 @@ function CartProducts() {
         )) }
       </table>
       <section data-testid="customer_checkout__element-order-total-price">
-        { cartTotal.toFixed(2).replace('.', ',') }
+        { priceCheck }
       </section>
     </>
   );
