@@ -1,11 +1,9 @@
-const { sale } = require('../database/models');
-const { salesProduct } = require('../database/models');
-const { user } = require('../database/models');
+const { sale, salesProduct, user, product } = require('../database/models');
 
 const create = async (data) => {
-  const { userId, totalPrice, deliveryAddress, deliveryNumber, saleDate, status, sellerId } = data;
+  const { userId, totalPrice, deliveryAddress, deliveryNumber, saleDate, sellerId } = data;
   const result = await sale.create(
-    { userId, totalPrice, deliveryAddress, deliveryNumber, saleDate, status, sellerId },
+    { userId, totalPrice, deliveryAddress, deliveryNumber, saleDate, status: 'pendente', sellerId },
   );
 
   await salesProduct.create({
@@ -20,7 +18,10 @@ const create = async (data) => {
 const getById = async (id) => {
   const result = await sale.findAll({
     where: { userId: id },
-    include: [{ model: user, as: 'Seller', attributes: { exclude: ['password'] } }],
+    include: [
+      { model: user, as: 'Seller', attributes: { exclude: ['password'] } },
+      { model: product, as: 'products', through: { attributes: { include: ['quantity'] } } },
+  ],
   });
   return result;
 };
@@ -30,4 +31,9 @@ const getAll = async () => {
   return result;
 };
 
-module.exports = { create, getById, getAll };
+const update = async (data, id) => {
+  await sale.update({ status: data.status }, { where: { id } });
+  return { message: 'update successfully' };
+};
+
+module.exports = { create, getById, getAll, update };
