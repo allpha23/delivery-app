@@ -5,13 +5,16 @@ import Context from './Context';
 export default function Provider({ children }) {
   const [productData, setProductData] = useState([]);
   const [userInfo, setUserInfo] = useState({ name: '', email: '', role: '', token: '' });
+  const [cart, setCart] = useState([]);
 
   const stateGlobal = useMemo(() => ({
     userInfo,
     setUserInfo,
     productData,
     setProductData,
-  }), [productData, userInfo]);
+    cart,
+    setCart,
+  }), [productData, userInfo, cart]);
 
   return (
     <Context.Provider
