@@ -1,13 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
+import Context from '../context/Context';
 
 export default function ProductCard({ testId, title, price, image }) {
+  const { cart, setCart } = useContext(Context);
   const [quantity, setQuantity] = useState(0);
 
   const correctPrice = (quantity * parseFloat(price)).toFixed(2);
 
+  const cartOperations = () => {
+    const itemIsOnCart = cart.some((item) => item.name === title);
+
+    // Updating quantity when Item already on Cart.
+    if (quantity > 0 && itemIsOnCart) {
+      const cartUpdated = cart.map((item) => {
+        if (item.name === title && (item.quantity > 0)) return { ...item, quantity };
+        return item;
+      });
+      return setCart(cartUpdated);
+    }
+
+    // Inserting on Cart for the first time.
+    if (quantity > 0) {
+      return setCart((prevValue) => [...prevValue, { name: title, price, quantity }]);
+    }
+
+    // Removing item from Cart when quantity is 0.
+    if (quantity === 0 && itemIsOnCart) {
+      const removingItem = cart.filter((item) => item.name !== title);
+      return setCart(removingItem);
+    }
+  };
+
   useEffect(() => {
-    console.log(quantity);
+    cartOperations();
   }, [quantity]);
 
   return (
