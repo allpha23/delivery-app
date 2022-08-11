@@ -5,8 +5,8 @@ import login from '../services/Login';
 function Login() {
   const history = useHistory();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('adm@deliveryapp.com');
+  const [password, setPassword] = useState('--adm2@21!!--');
   const [errorMessage, setErrorMessage] = useState(false);
   const [redir, setRedir] = useState(false);
 
