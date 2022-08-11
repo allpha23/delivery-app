@@ -10,7 +10,7 @@ const login = async (email, password) => {
 
   const hash = md5(password);
 
-  if (hash !== users.password) throw new AppError('Invalid Password', 400);
+  if (hash !== users.password) throw new AppError('Campos invalidos', 400);
 
   delete users.password;
 

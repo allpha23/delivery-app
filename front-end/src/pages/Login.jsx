@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
-import local from '../helpers/setLocalStorage';
 import login from '../services/Login';
 
 function Login() {
@@ -17,8 +16,7 @@ function Login() {
   const tryLogin = async () => {
     try {
       const logging = await login(email, password);
-      local(logging.data);
-      console.log(logging.data);
+      localStorage.setItem('user', JSON.stringify(logging.data));
       setRedir(true);
     } catch (e) {
       setErrorMessage(true);

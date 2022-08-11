@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Context from '../context/Context';
+import local from '../helpers/setLocalStorage';
 
 export default function ClientNavegation() {
   const history = useHistory();
-  const { userInfo } = useContext(Context);
+  const getName = local();
+
+  const logoutHandler = () => {
+    localStorage.removeItem('user');
+    history.push('/login');
+  };
 
   return (
     <nav>
@@ -27,11 +32,12 @@ export default function ClientNavegation() {
       <h1
         data-testid="customer_products__element-navbar-user-full-name"
       >
-        { userInfo.name }
+        { getName.name }
       </h1>
       <button
         type="button"
         data-testid="customer_products__element-navbar-link-logout"
+        onClick={ logoutHandler }
       >
         {' '}
         LOGOUT
