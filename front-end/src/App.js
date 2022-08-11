@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Login, Register, Products } from './pages';
 import Provider from './context/Provider';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route exact path="/customer/products">
             <Products />
+          </Route>
+          <Route exact path="/customer/checkout">
+            <Checkout />
           </Route>
         </Switch>
       </BrowserRouter>
