@@ -5,7 +5,9 @@ function CartProducts() {
   const { cart, setCart } = useContext(Context);
 
   const priceCheck = cart
-  .reduce((price, item) => (Number(item.price) * item.quantity) + price, 0).toFixed(2).replace('.', ',');
+    .reduce((price, item) => (Number(item.price) * item.quantity) + price, 0)
+    .toFixed(2)
+    .replace('.', ',');
 
   return (
     <>

@@ -10,7 +10,9 @@ export default function Products() {
   const [redir, setRedir] = useState(false);
 
   const priceCheck = cart
-  .reduce((price, item) => (Number(item.price) * item.quantity) + price, 0).toFixed(2).replace('.', ',');
+    .reduce((price, item) => (Number(item.price) * item.quantity) + price, 0)
+    .toFixed(2)
+    .replace('.', ',');
 
   const fetchProducts = async () => {
     const response = await getProducts();
