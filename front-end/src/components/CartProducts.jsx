@@ -4,6 +4,11 @@ import Context from '../context/Context';
 function CartProducts() {
   const { cart, setCart } = useContext(Context);
 
+  const priceCheck = cart
+    .reduce((price, item) => (Number(item.price) * item.quantity) + price, 0)
+    .toFixed(2)
+    .replace('.', ',');
+
   return (
     <>
       <table>
@@ -15,17 +20,41 @@ function CartProducts() {
           <th>Sub-total</th>
           <th>Remover item</th>
         </tr>
-        { cart.map((product,i) => (
-          <tr>
-            <td data-testid={`customer_checkout__element-order-table-item-number-${i+ 1}`}>{ i + 1 }</td>
-            <td data-testid={`customer_checkout__element-order-table-name-${i+ 1}`}>{ product.name }</td>
-            <td data-testid={`customer_checkout__element-order-table-quantity-${i+1}`}>{ product.quantity }</td>
-            <td data-testid={`customer_checkout__element-order-table-unit-price-${i+1}`}>{ product.price }</td>
-            <td data-testid={`customer_checkout__element-order-table-sub-total-${i+1}`}>{ product.price * product.quantity }</td>
+        { cart.map((product, i) => (
+          <tr key={ i + 1 }>
+            <td
+              data-testid={
+                `customer_checkout__element-order-table-item-number-${i}`
+              }
+            >
+              { i + 1 }
+            </td>
+            <td
+              data-testid={ `customer_checkout__element-order-table-name-${i}` }
+            >
+              { product.name }
+            </td>
+            <td
+              data-testid={ `customer_checkout__element-order-table-quantity-${i}` }
+            >
+              { product.quantity }
+            </td>
+            <td
+              data-testid={ `customer_checkout__element-order-table-unit-price-${i}` }
+            >
+              { `R$${product.price.replace('.', ',')}` }
+            </td>
+            <td
+              data-testid={ `customer_checkout__element-order-table-sub-total-${i}` }
+            >
+              { (product.quantity * parseFloat(product.price))
+                .toFixed(2)
+                .replace('.', ',') }
+            </td>
             <td>
               <button
-                data-testid={`customer_checkout__element-order-table-remove-${i+1}`}
-                type='button'
+                data-testid={ `customer_checkout__element-order-table-remove-${i}` }
+                type="button"
                 onClick={ () => {
                   const removed = cart.filter((p) => p.name !== product.name);
                   setCart(removed);
@@ -37,6 +66,9 @@ function CartProducts() {
           </tr>
         )) }
       </table>
+      <section data-testid="customer_checkout__element-order-total-price">
+        { priceCheck }
+      </section>
     </>
   );
 }
