@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       saleDate: {
         field: "sale_date",
         type: DataTypes.DATE,
-        defaultValue: Date.now(),
+        defaultValue: new Date().toLocaleDateString(),
       },
       status: DataTypes.STRING,
       sellerId: { field: "seller_id", type: DataTypes.INTEGER },
