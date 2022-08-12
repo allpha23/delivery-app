@@ -5,6 +5,7 @@ import { Login, Register, Products } from './pages';
 import Provider from './context/Provider';
 import Checkout from './pages/Checkout';
 import Orders from './pages/Orders';
+import OrderDetails from './pages/OrderDetails';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route exact path="/customer/orders">
             <Orders />
+          </Route>
+          <Route exact path="/customer/orders/:id">
+            <OrderDetails />
           </Route>
         </Switch>
       </BrowserRouter>

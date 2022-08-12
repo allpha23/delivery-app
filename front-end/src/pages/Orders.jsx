@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ClientNavegation from '../components/ClientNavegation';
 import SaleCard from '../components/SaleCard';
-import getSalesByUserId from '../services/Sale';
+import { getSalesByUserId } from '../services/Sale';
 
 export default function Orders() {
   const [saleData, setSaleData] = useState([]);
