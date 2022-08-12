@@ -29,13 +29,6 @@ export default function Orders() {
           price={ el.totalPrice }
         />
       ))}
-
-      <button
-        type="button"
-        data-testid="customer_products__checkout-bottom-value"
-      >
-        Ver carrinho
-      </button>
     </>
   );
 }
