@@ -34,9 +34,7 @@ export default function Orders() {
         type="button"
         data-testid="customer_products__checkout-bottom-value"
       >
-        Ver carrinho -
-        {' '}
-        {}
+        Ver carrinho
       </button>
     </>
   );
