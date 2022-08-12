@@ -15,8 +15,14 @@ const login = async (email, password) => {
   delete users.password;
 
   const token = jwt(users);
-  
-  return { name: users.name, email: users.email, role: users.role, token };
+
+  return {
+    id: users.id,
+    name: users.name,
+    email: users.email,
+    role: users.role,
+    token,
+  };
 };
 
 module.exports = { login };
