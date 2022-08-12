@@ -37,11 +37,15 @@ export default function Products() {
 
       <button
         type="button"
-        data-testid="customer_products__checkout-bottom-value"
+        data-testid="customer_products__button-cart"
         onClick={ () => setRedir(true) }
         disabled={ cart.length === 0 }
       >
-        { priceCheck }
+        <p
+          data-testid="customer_products__checkout-bottom-value"
+        >
+          { priceCheck }
+        </p>
       </button>
       {redir && <Redirect to="/customer/checkout" />}
     </>
