@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ClientNavegation from '../components/ClientNavegation';
 import SaleCardDetails from '../components/SaleCardDetails';
 import { getSaleById, update } from '../services/Sale';
 import formatDate from '../components/formatDate';
@@ -33,6 +34,8 @@ export default function OrderDetails() {
     <div>
       {render && (
         <div>
+          <ClientNavegation />
+
           <h1>Detalho do Pedido</h1>
           <p
             data-testid="customer_order_details__element-order-details-label-order-id"
