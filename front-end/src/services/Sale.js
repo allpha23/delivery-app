@@ -5,6 +5,11 @@ const getSalesByUserId = async (id) => {
   return sales;
 };
 
+const getSalesBySellerId = async (id) => {
+  const sales = await axios.get(`http://localhost:3001/sale/seller/${id}`);
+  return sales;
+};
+
 const getSaleById = async (id) => {
   const sales = await axios.get(`http://localhost:3001/sale/${id}`);
   return sales;
@@ -18,4 +23,4 @@ const update = async (status, id) => {
   return saleUpdate;
 };
 
-export { getSalesByUserId, getSaleById, update };
+export { getSalesByUserId, getSalesBySellerId, getSaleById, update };
