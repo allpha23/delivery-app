@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import Context from '../context/Context';
 
-export default function ProductCard({ testId, title, price, image }) {
+export default function ProductCard({ testId, title, price, image, id }) {
   const { cart, setCart } = useContext(Context);
   const [quantity, setQuantity] = useState(0);
 
@@ -22,7 +22,7 @@ export default function ProductCard({ testId, title, price, image }) {
 
     // Inserting on Cart for the first time.
     if (quantity > 0) {
-      return setCart((prevValue) => [...prevValue, { name: title, price, quantity }]);
+      return setCart((prevValue) => [...prevValue, { name: title, price, quantity, id }]);
     }
 
     // Removing item from Cart when quantity is 0.
@@ -80,4 +80,5 @@ ProductCard.propTypes = {
   title: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
