@@ -33,6 +33,7 @@ export default function Products() {
           price={ el.price }
           image={ el.urlImage }
           testId={ index + 1 }
+          id={ el.id }
         />))}
 
       <button
