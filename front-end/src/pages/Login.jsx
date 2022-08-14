@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import login from '../services/Login';
 
@@ -23,6 +23,17 @@ function Login() {
       console.log(e.message);
     }
   };
+
+  const isLogged = () => {
+    const getUser = JSON.parse(localStorage.getItem('user'));
+    if (getUser) {
+      setRedir(true);
+    }
+  };
+
+  useEffect(() => {
+    isLogged();
+  }, []);
 
   const btnStatus = !((password.length >= minPasswordLength) && emailRegex.test(email));
 
