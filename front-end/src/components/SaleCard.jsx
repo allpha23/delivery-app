@@ -1,15 +1,10 @@
 import { PropTypes } from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import formatDate from './formatDate';
 
 export default function SaleCard(props) {
   const { id, date, status, price } = props;
   const history = useHistory();
-
-  const formattedDate = (data) => {
-    const newDate = data.split('T', 1).join();
-    const dateWithoutTime = newDate.split('-').reverse().join('/');
-    return dateWithoutTime;
-  };
 
   return (
     <div>
@@ -20,7 +15,7 @@ export default function SaleCard(props) {
         <p
           data-testid={ `customer_orders__element-order-date-${id}` }
         >
-          {formattedDate(date)}
+          {formatDate(date)}
         </p>
         <p
           data-testid={ `customer_orders__element-delivery-status-${id}` }
