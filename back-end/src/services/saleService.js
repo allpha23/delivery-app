@@ -7,7 +7,7 @@ const create = async (data) => {
     totalPrice,
     deliveryAddress,
     deliveryNumber,
-    status: 'pendente',
+    status: 'Pendente',
     sellerId,
   });
 
