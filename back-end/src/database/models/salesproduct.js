@@ -12,7 +12,7 @@ const PostCategory = (sequelize, DataTypes) => {
       }, 
       quantity: DataTypes.INTEGER
     },
-    { timestamps: false, underscored: true, tableName: 'salesProducts' }
+    { timestamps: false, underscored: true }
   );
 
   SalesProduct.associate = (models) => {
