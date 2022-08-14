@@ -10,4 +10,12 @@ const getSaleById = async (id) => {
   return sales;
 };
 
-export { getSalesByUserId, getSaleById };
+const update = async (status, id) => {
+  const saleUpdate = await axios.patch(
+    `http://localhost:3001/sale/${id}`,
+    { status },
+  );
+  return saleUpdate;
+};
+
+export { getSalesByUserId, getSaleById, update };

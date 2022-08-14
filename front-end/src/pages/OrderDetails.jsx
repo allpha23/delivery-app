@@ -1,47 +1,65 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import SaleCardDetails from '../components/SaleCardDetails';
-import { getSaleById } from '../services/Sale';
+import { getSaleById, update } from '../services/Sale';
+import formatDate from '../components/formatDate';
+
+const statusTest = 'customer_order_details__element-order-details-label-delivery-status';
 
 export default function OrderDetails() {
   const { id } = useParams();
   const [sale, setSale] = useState({});
   const [render, setRender] = useState(false);
+  const [check, setCheck] = useState(true);
 
   const fetchSale = async () => {
     const saleData = await getSaleById(id);
     setSale(saleData.data);
     setRender(true);
+    // if (saleData.data.status === 'Entregue') setCheck(true);
+  };
+
+  const updateStatus = async () => {
+    const saleUpdate = await update('Entregue', id);
+    setCheck(true);
+    return saleUpdate;
   };
 
   useEffect(() => {
     fetchSale();
-  }, []);
+  }, [check]);
 
   return (
     <div>
       {render && (
         <div>
-          <h1>Order details</h1>
+          <h1>Detalho do Pedido</h1>
           <p
-            data-testid={ `customer_order_details__element-order-details
-            -label-order-${id}` }
+            data-testid="customer_order_details__element-order-details-label-order-id"
           >
             {`Pedido: ${id}`}
           </p>
           <p
-            data-testid="customer_order_details__element-order-details-label-seller-nam"
+            data-testid="customer_order_details__element-order-details-label-seller-name"
           >
             {`Vendedor: ${sale.Seller.name}`}
           </p>
           <p data-testid="customer_order_details__element-order-details-label-order-date">
-            {`Data: ${sale.saleDate}`}
+            {formatDate(sale.saleDate)}
           </p>
           <p
-            data-testid={ `customer_orders__element-delivery-status-${id}` }
+            data-testid={ statusTest }
           >
-            {`Status: ${sale.status}`}
+            {sale.status}
           </p>
+          <button
+            data-testid="customer_order_details__button-delivery-check"
+            type="button"
+            onClick={ updateStatus }
+            disabled={ check }
+          >
+            Marcar como entregue
+          </button>
 
           <table>
             <thead>
@@ -65,7 +83,9 @@ export default function OrderDetails() {
               ))}
             </tbody>
           </table>
-          <p>{`Total price: ${sale.totalPrice}`}</p>
+          <p data-testid="customer_order_details__element-order-total-price">
+            {sale.totalPrice.replace('.', ',')}
+          </p>
         </div>
       )}
     </div>
