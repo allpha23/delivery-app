@@ -17,8 +17,17 @@ function CartAdress() {
 
   const createSalenRedirect = async () => {
     try {
-      const sale = await createSale(Number(totalPrice), address, adrsNumber);
-      console.log(sale.data);
+      const productsQuantity = cart.map((el) => el.quantity);
+      const productsId = cart.map((el) => el.id);
+      console.log(productsId);
+
+      const sale = await createSale({
+        totalPrice: Number(totalPrice),
+        deliveryAddress: address,
+        deliveryNumber: adrsNumber,
+        productsIds: productsId,
+        quantity: productsQuantity,
+      });
       setSaleId(sale.data.id);
       setRedir(true);
     } catch (e) {
