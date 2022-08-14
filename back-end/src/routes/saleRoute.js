@@ -9,5 +9,6 @@ route.post('/', authorization, saleController.create);
 route.get('/', saleController.getAll);
 route.get('/:id', saleController.getSaleById);
 route.get('/user/:id', saleController.getById);
+route.get('/seller/:id', saleController.getSaleBySellerId);
 route.patch('/:id', validateUpdate, saleController.update);
 module.exports = route;
