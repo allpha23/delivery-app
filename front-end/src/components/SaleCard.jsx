@@ -5,6 +5,12 @@ export default function SaleCard(props) {
   const { id, date, status, price } = props;
   const history = useHistory();
 
+  const formattedDate = (data) => {
+    const newDate = data.split('T', 1).join();
+    const dateWithoutTime = newDate.split('-').reverse().join('/');
+    return dateWithoutTime;
+  };
+
   return (
     <div>
       <div onClick={ () => history.push(`/customer/orders/${id}`) } aria-hidden="true">
@@ -12,19 +18,19 @@ export default function SaleCard(props) {
           {`Pedido: ${id}`}
         </p>
         <p
-          data-testid={ `customer_orders__element-delivery-status-${id}` }
+          data-testid={ `customer_orders__element-order-date-${id}` }
         >
-          {`Data: ${date}`}
+          {formattedDate(date)}
         </p>
         <p
-          data-testid={ `customer_orders__element-order-date-${id}` }
+          data-testid={ `customer_orders__element-delivery-status-${id}` }
         >
           {`Status: ${status}`}
         </p>
         <p
           data-testid={ `customer_orders__element-card-price-${id}` }
         >
-          {`Price: ${price}`}
+          {price.replace('.', ',')}
         </p>
       </div>
     </div>
