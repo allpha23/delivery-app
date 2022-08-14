@@ -31,6 +31,15 @@ function Login() {
     }
   };
 
+  const redirByRole = () => {
+    const getUser = JSON.parse(localStorage.getItem('user'));
+
+    if (getUser.role === 'seller') {
+      return <Redirect to="/seller/orders" />;
+    }
+    return <Redirect to="/customer/products" />;
+  };
+
   useEffect(() => {
     isLogged();
   }, []);
@@ -74,7 +83,7 @@ function Login() {
       </button>
       {errorMessage
       && <p data-testid="common_login__element-invalid-email">404 - Not found</p>}
-      { redir && <Redirect to="/customer/products" /> }
+      { redir && redirByRole() }
     </section>
   );
 }
