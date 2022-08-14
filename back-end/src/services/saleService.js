@@ -62,4 +62,19 @@ const getSaleById = async (id) => {
   return result;
 };
 
-module.exports = { create, getByUserId, getAll, update, getSaleById };
+const getBySellerId = async (id) => {
+  const result = await sale.findAll({
+    where: { sellerId: id },
+    include: [
+      { model: user, as: 'Seller', attributes: { exclude: ['password'] } },
+      {
+        model: product,
+        as: 'products',
+        through: { attributes: { include: ['quantity'] } },
+      },
+    ],
+  });
+  return result;
+};
+
+module.exports = { create, getByUserId, getAll, update, getSaleById, getBySellerId };
