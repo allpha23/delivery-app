@@ -1,0 +1,99 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+  box-shadow: 0 30px 70px #a9a9a940;
+  border-radius: 50px;
+  border-top: 7px solid #2fc18c;
+  min-width: 560px;
+  padding: 30px 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    color: #2fc18c;
+    font-size: 42px;
+    margin-bottom: 60px;
+  }
+}
+
+.button {
+  margin-top: 20px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  background-color: #2fc18c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #1e9e6f;
+  }
+}
+
+.btnRegister {
+  margin-top: 20px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+
+  &:hover {
+    color: #1e9e6f;
+  }
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.inputContent {
+  background-color: #8080804a;
+  border: 2px solid transparent;
+  height: 60px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.input {
+  background: transparent;
+  height: 60px;
+  width: 100%;
+  border: none;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 1rem; //16px
+  letter-spacing: 1px;
+
+  &:focus {
+    outline: none;
+  }
+}
