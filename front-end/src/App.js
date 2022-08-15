@@ -7,6 +7,7 @@ import Checkout from './pages/Checkout';
 import Orders from './pages/Orders';
 import OrderDetails from './pages/OrderDetails';
 import SellerOrders from './pages/SellerOrders';
+import SellerOrdersDetail from './pages/SellerOrdersDetail';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route exact path="/seller/orders">
             <SellerOrders />
+          </Route>
+          <Route exact path="/seller/orders/:id">
+            <SellerOrdersDetail />
           </Route>
         </Switch>
       </BrowserRouter>
