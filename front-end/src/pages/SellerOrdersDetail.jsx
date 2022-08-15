@@ -23,6 +23,7 @@ export default function SellerOrdersDetail() {
       setTransit(false);
     }
     if (saleData.data.status === 'Em Trânsito') setTransit(true);
+    if (saleData.data.status === 'Entregue') setPrepere(true);
   };
 
   const updateStatus = async (e) => {
