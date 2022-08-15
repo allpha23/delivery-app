@@ -17,7 +17,7 @@ export default function OrderDetails() {
     const saleData = await getSaleById(id);
     setSale(saleData.data);
     setRender(true);
-    // if (saleData.data.status === 'Entregue') setCheck(true);
+    if (saleData.data.status === 'Em Trânsito') setCheck(false);
   };
 
   const updateStatus = async () => {
