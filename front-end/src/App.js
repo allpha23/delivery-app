@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { Register, Products } from './pages';
+import { Products } from './pages';
 import Provider from './context/Provider';
 import Checkout from './pages/Checkout';
 import Orders from './pages/Orders';
@@ -8,6 +8,7 @@ import OrderDetails from './pages/OrderDetails';
 import SellerOrders from './pages/SellerOrders';
 import SellerOrdersDetail from './pages/SellerOrdersDetail';
 import Login from './pages/login/Login';
+import Register from './pages/register/Register';
 
 function App() {
   return (

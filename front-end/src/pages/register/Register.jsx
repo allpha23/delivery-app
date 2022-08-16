@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import register from '../services/Register';
+import register from '../../services/Register';
+import styles from './styles.module.scss';
 
 function Register() {
   const [name, setName] = useState('');
@@ -28,30 +29,37 @@ function Register() {
     && emailRegex.test(email) && (password.length >= minPasswordLength));
 
   return (
-    <section>
-      <main>
-        <p>Nome</p>
+    <section className={ styles.container }>
+      <form className={ styles.form }>
+
+        <h2>Registro</h2>
+
         <input
+          className={ styles.input }
           type="text"
           data-testid="common_register__input-name"
           placeholder="Seu Nome"
           onChange={ (e) => setName(e.target.value) }
         />
-        <p>Email</p>
+
         <input
+          className={ styles.input }
           type="text"
           data-testid="common_register__input-email"
           placeholder="seu-email@site.com.br"
           onChange={ (e) => setEmail(e.target.value) }
         />
-        <p>Senha</p>
+
         <input
+          className={ styles.input }
           type="password"
           data-testid="common_register__input-password"
           placeholder="********"
           onChange={ (e) => setPassword(e.target.value) }
         />
+
         <button
+          className={ styles.button }
           type="button"
           data-testid="common_register__button-register"
           disabled={ btnStatus }
@@ -59,7 +67,8 @@ function Register() {
         >
           CADASTRAR
         </button>
-      </main>
+
+      </form>
       {errorMessage
       && <p data-testid="common_register__element-invalid_register">404 - Not found</p>}
       { redir && <Redirect to="/customer/products" /> }
