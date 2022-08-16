@@ -1,0 +1,74 @@
+.container {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005536;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.products {
+  height: 100%;
+  display: flex;
+
+  button {
+    height: 100%;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
+
+.btnOrder {
+  background: transparent;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btnProduct {
+  background-color: #1e9e6f;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.client {
+  height: 100%;
+  display: flex;
+
+  button {
+    background-color: #3498db;
+    height: 100%;
+    width: 80px;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}

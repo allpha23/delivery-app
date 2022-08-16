@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import ClientNavegation from '../../components/ClientNavegation';
+import ClientNavegation from '../../components/clientNavegation/ClientNavegation';
 import ProductCard from '../../components/productCard/ProductCard';
 import Context from '../../context/Context';
 import getProducts from '../../services/Products';
