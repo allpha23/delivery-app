@@ -1,0 +1,30 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px;
+  position: relative;
+}
+
+.button {
+  width: 120px;
+  height: 70px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  background: #1e9e6f;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  opacity: 0.87;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
