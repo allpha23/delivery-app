@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ClientNavegation from '../components/ClientNavegation';
+import ClientNavegation from '../components/clientNavegation/ClientNavegation';
 import SellerCard from '../components/SellerCard';
 import { getSalesBySellerId } from '../services/Sale';
 

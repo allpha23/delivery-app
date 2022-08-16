@@ -1,7 +1,7 @@
 import React from 'react';
 import CartAdress from '../components/CartAdress';
 import CartProducts from '../components/CartProducts';
-import ClientNavegation from '../components/ClientNavegation';
+import ClientNavegation from '../components/clientNavegation/ClientNavegation';
 
 function Checkout() {
   return (

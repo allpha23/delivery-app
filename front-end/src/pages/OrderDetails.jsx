@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ClientNavegation from '../components/ClientNavegation';
+import ClientNavegation from '../components/clientNavegation/ClientNavegation';
 import SaleCardDetails from '../components/SaleCardDetails';
 import { getSaleById, update } from '../services/Sale';
 import formatDate from '../components/formatDate';
