@@ -52,37 +52,27 @@ function Login() {
       <form className={ styles.form }>
         <h2> Delivery App </h2>
 
-        <div className={ styles.inputContainer }>
-          <label className={ styles.label }>Email:</label>
-          <div className={ styles.inputContent }>
-            <input
-              className={ styles.input }
-              id="email"
-              name="email"
-              data-testid="common_login__input-email"
-              type="text"
-              placeholder="email"
-              value={ email }
-              onChange={ (e) => setEmail(e.target.value) }
-            />
-          </div>
-        </div>
+        <input
+          className={ styles.input }
+          id="email"
+          name="email"
+          data-testid="common_login__input-email"
+          type="text"
+          placeholder="email"
+          value={ email }
+          onChange={ (e) => setEmail(e.target.value) }
+        />
 
-        <div className={ styles.inputContainer }>
-          <label className={ styles.laber }>Password:</label>
-          <div className={ styles.inputContent }>
-            <input
-              className={ styles.input }
-              id="password"
-              name="password"
-              data-testid="common_login__input-password"
-              type="password"
-              placeholder="password"
-              value={ password }
-              onChange={ (e) => setPassword(e.target.value) }
-            />
-          </div>
-        </div>
+        <input
+          className={ styles.input }
+          id="password"
+          name="password"
+          data-testid="common_login__input-password"
+          type="password"
+          placeholder="password"
+          value={ password }
+          onChange={ (e) => setPassword(e.target.value) }
+        />
 
         <button
           className={ styles.button }
