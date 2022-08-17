@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Provider from './context/Provider';
-import Orders from './pages/Orders';
+import Orders from './pages/orders/Orders';
 import OrderDetails from './pages/OrderDetails';
 import SellerOrders from './pages/SellerOrders';
 import SellerOrdersDetail from './pages/SellerOrdersDetail';
