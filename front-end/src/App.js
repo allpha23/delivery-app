@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Provider from './context/Provider';
 import Orders from './pages/orders/Orders';
 import OrderDetails from './pages/OrderDetails';
-import SellerOrders from './pages/SellerOrders';
+import SellerOrders from './pages/sellerOrders/SellerOrders';
 import SellerOrdersDetail from './pages/SellerOrdersDetail';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
