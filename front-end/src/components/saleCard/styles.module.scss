@@ -8,6 +8,11 @@
   border-radius: 15px;
   box-shadow: 20px 20px 50px rgb(19, 18, 18, 40);
   margin: 0 15px 30px 15px;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 }
 
 .number {
@@ -49,6 +54,14 @@
     font-weight: bold;
     font-size: 20px;
   }
+}
+
+.preper {
+  background-color: #427a21;
+}
+
+.delivered {
+  background-color: #3498db;
 }
 
 .info {
