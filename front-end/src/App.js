@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Provider from './context/Provider';
 import Orders from './pages/orders/Orders';
-import OrderDetails from './pages/OrderDetails';
+import OrderDetails from './pages/orderDetails/OrderDetails';
 import SellerOrders from './pages/sellerOrders/SellerOrders';
 import SellerOrdersDetail from './pages/SellerOrdersDetail';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
-import Checkout from './pages/Checkout';
+import Checkout from './pages/checkout/Checkout';
 import Products from './pages/products/Products';
 
 function App() {
