@@ -4,7 +4,7 @@ import Provider from './context/Provider';
 import Orders from './pages/orders/Orders';
 import OrderDetails from './pages/orderDetails/OrderDetails';
 import SellerOrders from './pages/sellerOrders/SellerOrders';
-import SellerOrdersDetail from './pages/SellerOrdersDetail';
+import SellerOrdersDetail from './pages/sellerOrdersDetail/SellerOrdersDetail';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Checkout from './pages/checkout/Checkout';

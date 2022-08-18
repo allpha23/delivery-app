@@ -1,0 +1,116 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 50px;
+
+  p {
+    font-weight: bold;
+  }
+
+  button {
+    height: 40px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  table {
+    position: relative;
+    height: 400px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    background-color: #585b5d;
+    padding: 0 10px 10px 10px;
+    overflow-x: hidden;
+
+    thead {
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section {
+      height: 40px;
+      width: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background-color: #005536;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-weight: bold;
+    }
+  }
+}
+
+.status {
+  height: 40px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  border-radius: 10px;
+  background-color: #cacc3b;
+}
+
+.preper {
+  background-color: #427a21;
+}
+
+.delivered {
+  background-color: #3498db;
+}
+
+.order {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #585b5d;
+  border-radius: 10px 10px 0 0;
+}
+
+.thNumber {
+  width: 66px;
+}
+
+.thName {
+  width: 515px;
+}
+
+.thQuantity {
+  width: 100px;
+}
+
+.thValue {
+  width: 120px;
+}
+
+.thSubTotal {
+  width: 80px;
+}
+
+.btnPreper {
+  background-color: #1e9e6f;
+}
+
+.btnTransit {
+  background-color: #3498db;
+}

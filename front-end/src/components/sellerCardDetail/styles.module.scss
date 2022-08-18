@@ -1,0 +1,60 @@
+.container {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  td {
+    border: 2px solid #585b5d;
+  }
+}
+
+.number {
+  height: 100%;
+  width: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  background-color: #1e9e6f;
+  padding: 0;
+}
+
+.name {
+  height: 100%;
+  width: 510px;
+  display: flex;
+  align-items: center;
+  background-color: #414141;
+  padding-left: 10px;
+}
+
+.quantity {
+  height: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #005536;
+}
+
+.price {
+  height: 100%;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e9e6f;
+  text-align: center;
+}
+
+.subTotal {
+  height: 100%;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3498db;
+  border-radius: 0 5px 5px 0;
+  text-align: center;
+}
