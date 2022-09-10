@@ -18,10 +18,25 @@ As pessoas que colaboraram com o desenvolvimento foram:
 - [Lucas Barbosa](https://github.com/N0T1V4G0)
 
 ## Layout web
+### Fluxo do cliente:
+<div>
+<img width="48%" src="https://github.com/allpha23/assets/raw/main/deliveryApp/delivery-login.png">
+<img width="48%" src="https://github.com/allpha23/assets/raw/main/deliveryApp/delivery-register.png">
+</div>
+<div>
+<img width="48%" src="https://github.com/allpha23/assets/raw/main/deliveryApp/delivery-produtos.png">
+<img width="48%" src="https://github.com/allpha23/assets/raw/main/deliveryApp/delivery-checkout.png">
+</div>
+<div>
+<img width="48%" src="https://github.com/allpha23/assets/raw/main/deliveryApp/delivery-client-order-detail.png">
+<img width="48%" src="https://github.com/allpha23/assets/raw/main/deliveryApp/delivery-client-order.png">
+</div>
 
-![Web 1](https://github.com/allpha23/assets/raw/main/TFC/login.png)
-![Web 2](https://github.com/allpha23/assets/raw/main/TFC/classificação.png)
-![Web 1](https://github.com/allpha23/assets/raw/main/TFC/partidas.png)
+### Fluxo do vendedor:
+<div>
+<img width="48%" src="https://github.com/allpha23/assets/raw/main/deliveryApp/delivery-seller-order.png">
+<img width="48%" src="https://github.com/allpha23/assets/raw/main/deliveryApp/delivery-seller-order-detail.png">
+</div>
 
 
 # Tecnologias utilizadas:
@@ -58,12 +73,15 @@ cd delivery-app
 npm install
 
 # Execute o projeto
-## delivery-app/front-end
 npm start
 
 projeto estará em execução no endereço localhost:3000
 
-# você deve usar o seguinte e-mail e senha para logar
-email: zebirita@gmail.com
-password: #*zebirita*#
+# logar como cliente
+email: zebirita@email.com
+senha: $#zebirita#$
+
+# logar como vendedor
+email: fulana@deliveryapp.com
+senha: fulana@123
 ```
